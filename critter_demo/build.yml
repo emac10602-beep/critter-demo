@@ -1,0 +1,25 @@
+name: Build NDS (devkitPro)
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: devkitpro/devkitarm:latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build
+        run: make
+
+      - name: Upload ROM & build folder
+        uses: actions/upload-artifact@v4
+        with:
+          name: critter_demo_build
+          path: |
+            *.nds
+            build/**
