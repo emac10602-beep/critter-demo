@@ -1,0 +1,78 @@
+# How to Build & Run the Critter 3D Platformer Demo on Mac (DSi/DS)
+
+## 1. Install devkitPro and nds-dev
+Open Terminal and install the devkitPro package manager if you don’t have it yet:
+
+    brew install devkitpro-pacman
+
+Then install the Nintendo DS development libraries:
+
+    sudo dkp-pacman -S nds-dev
+
+This sets up devkitARM (the compiler) and libnds.
+
+---
+
+## 2. Create a Project Folder
+In Terminal:
+
+    mkdir critter_demo
+    cd critter_demo
+
+Inside, create the folder structure:
+
+    critter_demo/
+     ├── Makefile
+     └── source/
+          └── main.c
+
+---
+
+## 3. Add the Code
+- Save the big code I gave you into `source/main.c`.
+- For the `Makefile`, copy it from the template that comes with devkitPro:
+  
+      cp /opt/devkitpro/examples/nds/template/Makefile ./Makefile
+
+(That path might differ depending on installation; look inside `/opt/devkitpro/examples/nds/`).
+
+---
+
+## 4. Build the ROM
+In Terminal, from the project folder:
+
+    make
+
+If successful, you will see an output file:
+
+    critter_demo.nds
+
+This is your playable ROM.
+
+---
+
+## 5. Run the ROM
+### Option A – Emulator
+- Install **melonDS** or **DeSmuME** on your Mac.
+- Drag-and-drop `critter_demo.nds` into the emulator to play instantly.
+
+### Option B – On a DSi XL
+- Install **TWiLight Menu++** on your DSi SD card.
+- Copy `critter_demo.nds` onto the SD card (e.g., into a `roms` folder).
+- Boot TWiLight Menu++, select the file, and run it.
+
+---
+
+## 6. Play Controls
+- D-Pad = move  
+- A = Jump / Glide  
+- B = Swat (attack)  
+- L/R = Orbit camera  
+- Y = Quick turn  
+- START = Reset to checkpoint  
+
+Collect glowing cubes, swat bug-bots, climb rooftops to the beacon.
+
+---
+
+That’s it! You’ve now got a working 3D platformer demo running on DSi hardware or Mac emulator.
