@@ -18,4 +18,4 @@ CXXFLAGS := $(CFLAGS) -fno-rtti -fno-exceptions
 LIBS := -lnds9
 
 # Pull in the NDS build rules from devkitARM
-include $(DEVKITARM)/ds_rules
+include $(DEVKITARM)/ds_rules 
